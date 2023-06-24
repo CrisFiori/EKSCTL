@@ -1,0 +1,15 @@
+# Test Cluster creation
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+  name: global-project
+  region: us-east-1
+
+managedNodeGroups:
+  - name: stack-desarrollo
+    labels: { role: workers }
+    instanceType: t3.medium
+    desiredCapacity: 1
+    volumeSize: 25
+    
